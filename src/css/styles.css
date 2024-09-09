@@ -1,0 +1,140 @@
+@import url('./reset.css');
+
+.container {
+  margin: 0 156px;
+}
+
+body {
+  text-align: center;
+}
+.form {
+  display: inline-block;
+  padding-bottom: 32px;
+}
+
+.input-seach {
+  width: 272px;
+  color: #808080;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  outline: none;
+}
+.input-seach:hover {
+  border: 1px solid #000;
+}
+.input-seach:focus {
+  border: 1px solid #4e75ff;
+}
+
+.btn-search {
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #4e75ff;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+  border: none;
+  outline: none;
+}
+.btn-search:hover,
+.btn-search:focus {
+  background: #6c8cff;
+}
+
+.gallery {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-card {
+  border: 1px solid #808080;
+  border-radius: 5px;
+}
+
+.gallery-image {
+  height: 152px;
+  width: 280px;
+  background-size: cover;
+}
+
+.card-info-list {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.info-item {
+  padding: 4px 10px;
+}
+
+.info-description {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.info-description-value {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Loader styles */
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border: 3px solid #242424;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: rotationBreak 3s ease-in-out infinite alternate;
+}
+.loader::after {
+  border-color: #4e75ff;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes rotationBreak {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hidden loader */
+.is-hidden {
+  display: none;
+}
