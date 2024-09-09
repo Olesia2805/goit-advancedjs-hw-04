@@ -1,7 +1,6 @@
 import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
 
-export function renderImages(images, gallery) {
+export const renderImages = (images, gallery) => {
   const createCard = images
     .map(img => {
       return `<li class="photo-card">
@@ -29,6 +28,7 @@ export function renderImages(images, gallery) {
     </div>
   </a>
 </li>
+
 `;
     })
     .join('');
@@ -40,4 +40,4 @@ export function renderImages(images, gallery) {
     captionDelay: 250,
   });
   galleryLibrary.refresh();
-}
+};
