@@ -38,7 +38,7 @@ form.addEventListener('submit', async event => {
       renderImages(response.hits, gallery);
     }
   } catch {
-    // loaderEl.classList.add('is-hidden');
+    loaderEl.classList.add('is-hidden');
     input.value = '';
     console.error('Error fetching images:', error);
   }
