@@ -29,8 +29,9 @@ form.addEventListener('submit', async event => {
     return;
   }
 
+  loaderEl.classList.remove('is-hidden');
+
   try {
-    loaderEl.classList.remove('is-hidden');
     const response = await fetchImages(searchQuery);
     input.value = '';
     loaderEl.classList.add('is-hidden');
