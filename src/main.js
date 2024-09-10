@@ -44,6 +44,10 @@ const onSearchFormSubmit = async event => {
       renderImages(response.hits, gallery);
     }
 
+    if (response.total <= imagesPerPage) {
+      return;
+    }
+
     loadMoreEl.classList.remove('is-hidden');
   } catch {
     loaderEl.classList.add('is-hidden');
