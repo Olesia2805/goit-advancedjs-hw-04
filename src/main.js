@@ -30,9 +30,10 @@ form.addEventListener('submit', async event => {
   }
 
   try {
+    loaderEl.classList.remove('is-hidden');
     const response = await fetchImages(searchQuery);
     input.value = '';
-    // loaderEl.classList.add('is-hidden');
+    loaderEl.classList.add('is-hidden');
     if (response.hits.length !== 0) {
       renderImages(response.hits, gallery);
     }
