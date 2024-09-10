@@ -15,6 +15,7 @@ const loaderEl = document.querySelector('.js-loader');
 form.addEventListener('submit', async event => {
   event.preventDefault();
   const searchQuery = input.value.trim();
+  gallery.innerHTML = '';
 
   if (searchQuery === '') {
     iziToast.error({
@@ -24,7 +25,6 @@ form.addEventListener('submit', async event => {
     });
 
     form.reset();
-    gallery.innerHTML = '';
 
     return;
   }
