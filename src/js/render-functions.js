@@ -32,7 +32,7 @@ export const renderImages = (images, gallery) => {
 `;
     })
     .join('');
-  gallery.innerHTML = createCard;
+  gallery.insertAdjacentHTML('beforeend', createCard);
 
   let galleryLibrary = new SimpleLightbox('.gallery a', {
     captions: true,

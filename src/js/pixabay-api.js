@@ -7,7 +7,7 @@ axios.defaults.baseURL = 'https://pixabay.com/api/';
 export const fetchImages = async (
   word,
   page,
-  per_page,
+  per_page = 15,
   orientation = 'horizontal'
 ) => {
   try {
@@ -15,11 +15,11 @@ export const fetchImages = async (
       params: {
         key: API_KEY,
         q: word,
-        image_type: 'photo',
-        orientation: orientation,
-        safesearch: 'true',
         page,
+        orientation,
         per_page,
+        image_type: 'photo',
+        safesearch: 'true',
       },
     };
 
