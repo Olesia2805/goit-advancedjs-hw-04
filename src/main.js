@@ -68,7 +68,6 @@ const onLoadMore = async event => {
       renderImages(data.hits, gallery);
     }
 
-    const totalPages = Math.ceil(data.total / imagesPerPage);
     galleryItemHeight = gallery
       .querySelector('li')
       .getBoundingClientRect().height;
@@ -80,7 +79,7 @@ const onLoadMore = async event => {
 
     loadMoreEl.classList.remove('is-hidden');
     loaderEl.classList.add('is-hidden');
-    if (currentPage >= totalPages) {
+    if (currentPage >= data.totalHits) {
       loadMoreEl.classList.add('is-hidden');
       iziToast.info({
         position: 'topLeft',
